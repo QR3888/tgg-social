@@ -204,6 +204,22 @@ def main():
             log("META_PAGE_TOKEN secret is missing."); return 1
         return check(queue, posted)
     now = datetime.now(timezone.utc)
+    if ONLY.startswith("diag:"):  # comment-permission diagnostics, posts at most one test comment per variant
+        pid = ONLY[5:]; ptok = page_token(); msg = "Answer in the image above \u2191"
+        try:
+            obj = call("GET", f"{G}/{pid}", {"fields": "attachments{target{id}}"}, token=ptok)
+            photo = obj["attachments"]["data"][0]["target"]["id"]
+        except Exception as e:
+            photo = None; log(f"diag: no photo id ({e})")
+        for label, target, tk in [("page token, photo id", photo, ptok), ("system-user token, post id", pid, TOKEN)]:
+            if not target: continue
+            try:
+                r = call("POST", f"{G}/{target}/comments", {"message": msg}, token=tk)
+                log(f"diag OK {label}: {r}")
+                call("DELETE", f"{G}/{r['id']}", {}, token=tk); log("  (test comment deleted)")
+            except Exception as e:
+                log(f"diag FAIL {label}: {str(e)[-300:]}")
+        return 0
     if ONLY:
         for it in queue:
             rec = posted.get(it["id"])
