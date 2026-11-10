@@ -119,6 +119,9 @@ def post_instagram(item, tok):
     return r.get("id")
 
 
+COMMENT_FAILED = set()
+
+
 def post_facebook(item, tok):
     kind, cap = item["kind"], item["caption"]
     if kind == "image":
@@ -144,7 +147,11 @@ def post_facebook(item, tok):
         raise RuntimeError(f"unknown kind {kind}")
     if item.get("first_comment") and post_id:
         time.sleep(5)
-        call("POST", f"{G}/{post_id}/comments", {"message": item["first_comment"]}, token=tok)
+        try:
+            call("POST", f"{G}/{post_id}/comments", {"message": item["first_comment"]}, token=tok)
+        except Exception as e:  # the post is live: never fail (and re-post) because of the comment
+            log(f"  WARNING first comment failed on {post_id}: {e}")
+            COMMENT_FAILED.add(item["id"])
     return post_id
 
 
@@ -152,6 +159,11 @@ def check(queue, posted):
     """Validate token, Page/IG link and every upcoming media URL without publishing."""
     tok = page_token()
     log(f"Token OK. Page {PAGE_ID}; Instagram account {ig_id()}")
+    try:
+        perms = call("GET", f"{G}/me/permissions", {}, token=TOKEN).get("data", [])
+        log("Token permissions: " + ", ".join(f"{p['permission']}={p['status']}" for p in perms))
+    except Exception as e:
+        log(f"(could not list permissions: {e})")
     bad = 0
     for it in queue:
         if it["id"] in posted:
@@ -192,6 +204,15 @@ def main():
             log("META_PAGE_TOKEN secret is missing."); return 1
         return check(queue, posted)
     now = datetime.now(timezone.utc)
+    if ONLY:
+        for it in queue:
+            rec = posted.get(it["id"])
+            if it["id"] == ONLY and rec and rec.get("comment_failed") and not DRY:
+                tok = page_token()
+                call("POST", f"{G}/{rec['result_id']}/comments", {"message": it["first_comment"]}, token=tok)
+                rec.pop("comment_failed"); rec["comment_retried"] = True
+                json.dump(posted, open(POSTED, "w"), indent=1)
+                log(f"  OK comment added to {rec['result_id']}"); return 0
     due = []
     for it in queue:
         if it["id"] in posted:
@@ -220,6 +241,8 @@ def main():
             tok = page_token()
             rid = post_instagram(it, tok) if it["network"] == "instagram" else post_facebook(it, tok)
             posted[it["id"]] = {"at": datetime.now(timezone.utc).isoformat(timespec="seconds"), "result_id": rid}
+            if it["id"] in COMMENT_FAILED:
+                posted[it["id"]]["comment_failed"] = True
             log(f"  OK {it['id']} -> {rid}")
         except Exception as e:  # keep going with the other posts
             failures += 1

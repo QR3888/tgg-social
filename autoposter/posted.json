@@ -6,6 +6,6 @@
  "w4-tue-qotd-fb": {
   "at": "2026-11-10T14:05:00+00:00",
   "result_id": "105927898387533_1188694173818859",
-  "note": "first comment failed (#200)"
+  "comment_failed": true
  }
 }
