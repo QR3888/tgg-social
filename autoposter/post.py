@@ -255,7 +255,14 @@ def main():
             continue
         try:
             tok = page_token()
-            rid = post_instagram(it, tok) if it["network"] == "instagram" else post_facebook(it, tok)
+            if it["network"] == "instagram":
+                try:
+                    rid = post_instagram(it, tok)
+                except Exception as e:  # IG media fetches fail intermittently (e.g. 2207085): retry once
+                    log(f"  retrying {it['id']} after: {e}"); time.sleep(30)
+                    rid = post_instagram(it, tok)
+            else:
+                rid = post_facebook(it, tok)
             posted[it["id"]] = {"at": datetime.now(timezone.utc).isoformat(timespec="seconds"), "result_id": rid}
             if it["id"] in COMMENT_FAILED:
                 posted[it["id"]]["comment_failed"] = True
