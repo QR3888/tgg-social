@@ -150,10 +150,17 @@
    "type": "reel",
    "day": "wed",
    "date": "2026-11-18",
-   "open": true,
+   "video": "reel_wed.mp4",
+   "cover": "cover_wed.jpg",
+   "caption_instagram": "🎬 Leading by rules and punishment? That's authoritarian leadership.\n\nAutocratic leaders keep full control and make decisions alone. It can work in a crisis, but over time it tends to drag down motivation and push turnover up. Know this style for the SHRM-CP & SCP leadership questions. 🧭\n\n👇 Ever worked for one? Tell us how it went in the comments.\n\n📚 Practice more at shrm.thegreygym.com\n\n#SHRMCP #SHRMSCP #HRCertification #HumanResources #SHRMExam #Leadership",
+   "caption_facebook_linkedin": "🎬 Leading by rules and punishment? That's authoritarian leadership.\n\nAutocratic leaders keep full control and make decisions alone. It can work in a crisis, but over time it tends to drag down motivation and push turnover up. Know this style for the SHRM-CP & SCP leadership questions. 🧭\n\n👇 Ever worked for one? Tell us how it went in the comments.\n\n📚 Practice more: https://shrm.thegreygym.com\n\n#SHRMCP #SHRMSCP #HRCertification #HumanResources #SHRMExam #Leadership",
+   "alt": "The Grey Gym HR explainer reel: Authoritarian (autocratic) leadership. On-screen text explains these leaders are task-focused, keep full control and motivate through rules and punishments; it can work in urgent situations but can lower motivation and satisfaction and raise turnover. Ends with a list of typical traits.",
+   "answer": "Autocratic leaders are task-focused and keep full control; can work in a crisis but can lower motivation and raise turnover",
+   "videoCoverMilliseconds": 7000,
+   "source_video": "HR Essentials: Authoritarian Leadership.mp4",
+   "format": "explainer",
    "time_et": "12:00 PM ET",
-   "time_doha": "20:00 Doha",
-   "note": "Open: send a new reel, or I fill it with backlog Short V3–V7 (on your computer)"
+   "time_doha": "20:00 Doha"
   },
   {
    "type": "stat",
@@ -187,10 +194,17 @@
    "type": "reel",
    "day": "thu",
    "date": "2026-11-19",
-   "open": true,
+   "video": "reel_thu.mp4",
+   "cover": "cover_thu.jpg",
+   "caption_instagram": "🎬 Can a job ever legally require a certain sex, religion or national origin?\n\nOnly under a BFOQ (bona fide occupational qualification), a very narrow exception to EEO law. The employer has to show it's essential to doing the job. Under Title VII, race and color can never be a BFOQ. 📌\n\n👇 Can you think of a real example? Drop it in the comments.\n\n📚 Practice more at shrm.thegreygym.com\n\n#SHRMCP #SHRMSCP #HRCertification #HumanResources #SHRMExam #EmploymentLaw",
+   "caption_facebook_linkedin": "🎬 Can a job ever legally require a certain sex, religion or national origin?\n\nOnly under a BFOQ (bona fide occupational qualification), a very narrow exception to EEO law. The employer has to show it's essential to doing the job. Under Title VII, race and color can never be a BFOQ. 📌\n\n👇 Can you think of a real example? Drop it in the comments.\n\n📚 Practice more: https://shrm.thegreygym.com\n\n#SHRMCP #SHRMSCP #HRCertification #HumanResources #SHRMExam #EmploymentLaw",
+   "alt": "The Grey Gym HR explainer reel: BFOQ. On-screen text explains a bona fide occupational qualification is a very narrow exception to EEO laws that lets employers base decisions on sex, religion or national origin only if they can show it is essential to the job, and warns that misusing a BFOQ can lead to a discrimination lawsuit.",
+   "answer": "BFOQ: narrow EEO exception for sex, religion or national origin only when essential to the job (never race or color under Title VII)",
+   "videoCoverMilliseconds": 7000,
+   "source_video": "HR Essentials: BFOQ.mp4",
+   "format": "explainer",
    "time_et": "12:00 PM ET",
-   "time_doha": "20:00 Doha",
-   "note": "Open: send a new reel, or I fill it with backlog Short V3–V7 (on your computer)"
+   "time_doha": "20:00 Doha"
   },
   {
    "type": "qotd",
@@ -245,15 +259,25 @@
    "type": "reel",
    "day": "fri",
    "date": "2026-11-20",
-   "open": true,
+   "video": "reel_fri.mp4",
+   "cover": "cover_fri.jpg",
+   "caption_instagram": "🎬 Benefits aren't just a perk. Managing them is a core HR job.\n\nBenefits administration covers health insurance, retirement plans and PTO: choosing providers, explaining options to employees and staying compliant. Done well, it helps you hire, keep people and boost engagement. 💼\n\n👇 What's the one benefit you'd never give up? Tell us below.\n\n📚 Practice more at shrm.thegreygym.com\n\n#SHRMCP #SHRMSCP #HRCertification #HumanResources #SHRMExam #EmployeeBenefits",
+   "caption_facebook_linkedin": "🎬 Benefits aren't just a perk. Managing them is a core HR job.\n\nBenefits administration covers health insurance, retirement plans and PTO: choosing providers, explaining options to employees and staying compliant. Done well, it helps you hire, keep people and boost engagement. 💼\n\n👇 What's the one benefit you'd never give up? Tell us below.\n\n📚 Practice more: https://shrm.thegreygym.com\n\n#SHRMCP #SHRMSCP #HRCertification #HumanResources #SHRMExam #EmployeeBenefits",
+   "alt": "The Grey Gym HR explainer reel: Benefits administration. On-screen text explains it is managing employee benefits such as health insurance, retirement plans and paid time off; HR selects and manages providers, communicates benefits and ensures compliance; done well it helps attract and retain employees and improve engagement.",
+   "answer": "Benefits administration: HR manages providers, communication and compliance for health, retirement and PTO; helps attraction, retention and engagement",
+   "videoCoverMilliseconds": 7000,
+   "source_video": "HR Essentials: Benefits Administration.mp4",
+   "format": "explainer",
    "time_et": "12:00 PM ET",
-   "time_doha": "20:00 Doha",
-   "note": "Open: send a new reel, or I fill it with backlog Short V3–V7 (on your computer)"
+   "time_doha": "20:00 Doha"
   }
  ],
  "reels_used": {
   "mon": "TGG Shorts V1 (2026-10-26_week2/reel_tue.mp4, answer B)",
-  "tue": "TGG Shorts V2 (2026-10-26_week2/reel_thu.mp4, answer C)"
+  "tue": "TGG Shorts V2 (2026-10-26_week2/reel_thu.mp4, answer C)",
+  "wed": "HR Essentials: Authoritarian Leadership.mp4",
+  "thu": "HR Essentials: BFOQ.mp4",
+  "fri": "HR Essentials: Benefits Administration.mp4"
  },
  "held": [],
  "shorts_unused": [
